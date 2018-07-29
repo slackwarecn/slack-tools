@@ -18,8 +18,6 @@ APP_EXC=(mozilla-thunderbird seamonkey seamonkey-solibs)
 # rsync first
 rsync -avz --delete --exclude 'source' linus@192.168.10.108:/mnt/usb1/slackware64-current/ ${REPO_DIR}/
 
-exit 5
-
 
 cd ${REPO_DIR}/slackware64
 
