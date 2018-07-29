@@ -16,7 +16,9 @@ REPO_DIR=${REPO_DIR:-/home/user/slackware-repo/slackware64-current}
 APP_EXC=(mozilla-thunderbird seamonkey seamonkey-solibs)
 
 # rsync first
-rsync -avz --delete linus@192.168.10.108:/mnt/usb1/slackware64-current/ ${REPO_DIR}/
+rsync -avz --delete --exclude 'source' linus@192.168.10.108:/mnt/usb1/slackware64-current/ ${REPO_DIR}/
+
+exit 5
 
 
 cd ${REPO_DIR}/slackware64
