@@ -13,10 +13,10 @@ set -eu
 
 
 REPO_DIR=${REPO_DIR:-/home/user/slackware-repo/slackware64-current}
-APP_EXC=(mozilla-thunderbird seamonkey seamonkey-solibs)
+APP_EXC=(hplip joe lxc mariadb blackbox fvwm gnuchess rdesktop windowmaker x3270 xfractint xgames xv xaos mozilla-thunderbird seamonkey seamonkey-solibs)
 
 # rsync first
-rsync -avz --delete --exclude 'source' linus@192.168.10.108:/mnt/usb1/slackware64-current/ ${REPO_DIR}/
+# rsync -avz --delete --exclude 'source' linus@192.168.10.108:/mnt/usb1/slackware64-current/ ${REPO_DIR}/
 
 
 cd ${REPO_DIR}/slackware64
@@ -39,17 +39,18 @@ do
 
 		#echo "upgrading $pkg"
 		upgradepkg --install-new $PKG
-		[[ $? -eq 0 ]] && rm $PKG
+		#[[ $? -eq 0 ]] && rm $PKG
 	done
 done
 
 
-APP_FAIL=$(find ${REPO_DIR}/slackware64/{a,ap,d,f,k,l,n,x,xap,tcl} -name "*.txz")
+# Show the apps which were not installed/deleted. (disabled)
+#APP_FAIL=$(find ${REPO_DIR}/slackware64/{a,ap,d,f,k,l,n,x,xap,tcl} -name "*.txz")
 
-if [ ! -z "$APP_FAIL" ]; then
-	echo "Finished. You may have one or more packages not installed:"
-	echo "$APP_FAIL"
-	ret=1
-fi
+#if [ ! -z "$APP_FAIL" ]; then
+#	echo "Finished. You may have one or more packages not installed:"
+#	echo "$APP_FAIL"
+#	ret=1
+#fi
 
 exit $ret
