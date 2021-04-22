@@ -1,3 +1,7 @@
+# NOTE: This script has been moved to https://github.com/mdrights/my-little-airport/Slackware  
+
+<hr />
+
 ## system-upgrade
 A simple script to upgrade packages in Slackware.
 
