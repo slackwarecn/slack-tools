@@ -1,8 +1,8 @@
-# NOTE: This script has been moved to https://github.com/mdrights/my-little-airport/Slackware  
+# NOTE: This script has been moved to https://github.com/mdrights/my-little-airport/tree/main/Slackware
 
 <hr />
 
-## system-upgrade
+## slackware-upgrade.sh
 A simple script to upgrade packages in Slackware.
 
 0. 首先你需要下载好 Slackware 软件源到本地（或网络挂载盘），比如：  
